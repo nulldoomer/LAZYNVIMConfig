@@ -9,7 +9,7 @@ vim.api.nvim_set_keymap("n", "<C-u>", "<C-u>zz", { noremap = true })
 vim.api.nvim_set_keymap("n", "n", "nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("n", "N", "Nzzzv", { noremap = true })
 vim.api.nvim_set_keymap("v", "J", ":m '>+1<CR>gv=gv", { noremap = true })
-vim.api.nvim_set_keymap("v", "K", ":m '>-2<CR>gv=gv", { noremap = true })
+vim.api.nvim_set_keymap("v", "K", ":m '<-2<CR>gv=gv", { noremap = true })
 vim.api.nvim_set_keymap("x", "<leader>p", '"_dP', { noremap = true })
 -- Cool Things
 vim.cmd("set scrolloff=8")
