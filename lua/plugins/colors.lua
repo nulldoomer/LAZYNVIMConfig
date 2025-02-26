@@ -1,5 +1,5 @@
 function ColorMyPencils(color)
-  color = color or "kanagawa-dragon"
+  color = color or "catppuccin-macchiato"
   vim.cmd.colorscheme(color)
 
   vim.api.nvim_set_hl(0, "Normal", { bg = "none" })
@@ -47,6 +47,28 @@ return {
             PmenuThumb = { bg = theme.ui.bg_p2 }, -- Colores personalizados para el pulgar de la barra de desplazamiento del menú emergente
           }
         end,
+      })
+    end,
+  },
+  {
+    "catppuccin/nvim",
+    name = "catppuccin",
+    lazy = false, -- Asegura que se cargue inmediatamente
+    priority = 1000, -- Se ejecuta antes que otros esquemas de colores
+    config = function()
+      require("catppuccin").setup({
+        flavour = "macchiato", -- Usar Macchiato como variante
+        transparent_background = true,
+        integrations = {
+          telescope = true,
+          treesitter = true,
+          mason = true,
+          cmp = true,
+          gitsigns = true,
+          nvimtree = true,
+          fidget = true,
+          which_key = true,
+        },
       })
       ColorMyPencils()
     end,
